@@ -23,7 +23,7 @@ function LoadingFallback() {
 
 function AppRouter() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/CityVerse-AI">
       <Suspense fallback={<LoadingFallback />}>
         <Routes>
           <Route path="/" element={<DashboardPage />} />
