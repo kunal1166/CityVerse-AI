@@ -21,7 +21,7 @@ function LoadingFallback() {
   );
 }
 
-function AppRouter() {
+export default function AppRouter() {
   return (
     <BrowserRouter basename="/CityVerse-AI">
       <Suspense fallback={<LoadingFallback />}>
@@ -41,5 +41,3 @@ function AppRouter() {
     </BrowserRouter>
   );
 }
-
-export default AppRouter;
