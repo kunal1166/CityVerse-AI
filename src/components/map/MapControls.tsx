@@ -1,0 +1,3 @@
+import { Layers, LocateFixed, Plus, Minus } from "lucide-react";
+const controls = [{ label: "Map layers", icon: Layers }, { label: "Locate city", icon: LocateFixed }, { label: "Zoom in", icon: Plus }, { label: "Zoom out", icon: Minus }];
+export default function MapControls() { return <div className="absolute right-4 top-20 z-1000 space-y-2">{controls.map(({ label, icon: Icon }) => <button key={label} type="button" aria-label={label} className="block rounded-xl border border-slate-700/80 bg-slate-950/85 p-2.5 text-slate-200 shadow-lg backdrop-blur-md transition hover:border-cyan-400/70 hover:text-cyan-200"><Icon size={18} /></button>)}</div>; }

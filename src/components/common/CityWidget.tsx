@@ -1,0 +1,8 @@
+import { Activity } from "lucide-react";
+import { Area, AreaChart, ResponsiveContainer, Tooltip, XAxis } from "recharts";
+import type { WidgetData, WidgetItem } from "../../types/city";
+import Card from "../ui/Card";
+
+const tones: Record<WidgetItem["tone"], string> = { cyan: "text-cyan-300", green: "text-emerald-300", blue: "text-blue-300", red: "text-rose-300", yellow: "text-amber-300", orange: "text-orange-300", purple: "text-violet-300" };
+interface CityWidgetProps { data: WidgetData; }
+export default function CityWidget({ data }: CityWidgetProps) { return <Card><div className="mb-5 flex items-start justify-between"><div><h2 className="text-xl font-semibold text-white">{data.title}</h2><p className="mt-1 text-sm text-slate-400">{data.subtitle}</p></div><Activity size={21} className="text-cyan-300" /></div>{data.chart ? <ResponsiveContainer width="100%" height={260}><AreaChart data={data.chart.map((point) => ({ label: point.label, value: point.value }))}><XAxis dataKey="label" stroke="#64748b" tickLine={false} axisLine={false} /><Tooltip /><Area dataKey="value" type="monotone" stroke="#22d3ee" fill="#0891b2" fillOpacity={0.25} /></AreaChart></ResponsiveContainer> : <div className="space-y-3">{data.items.map((entry) => <div key={entry.id} className="flex items-center justify-between rounded-xl border border-slate-700/70 bg-slate-900/40 p-3"><div><p className="font-medium text-white">{entry.title}</p><p className="mt-0.5 text-sm text-slate-400">{entry.detail}</p></div><div className="text-right"><p className={`font-semibold ${tones[entry.tone]}`}>{entry.status}</p>{entry.value !== undefined && <p className="mt-1 text-xs text-slate-500">{entry.value}%</p>}</div></div>)}</div>}</Card>; }

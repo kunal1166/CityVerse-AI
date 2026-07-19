@@ -1,0 +1,10 @@
+export { default as GovernanceOverview } from "./GovernanceOverview";
+export { default as CitizenComplaints } from "./CitizenComplaints";
+export { default as MunicipalKPIs } from "./MunicipalKPIs";
+export { default as DepartmentPerformance } from "./DepartmentPerformance";
+export { default as BudgetAnalytics } from "./BudgetAnalytics";
+export { default as PublicServiceEfficiency } from "./PublicServiceEfficiency";
+export { default as AIPolicyAdvisor } from "./AIPolicyAdvisor";
+export { default as SmartCityGoals } from "./SmartCityGoals";
+export { default as CitizenSentiment } from "./CitizenSentiment";
+export { default as GovernanceAlerts } from "./GovernanceAlerts";
