@@ -4,6 +4,9 @@
   "version": "1.0.0",
   "type": "module",
   "homepage": "https://kunal1166.github.io/CityVerse-AI/",
+  "engines": {
+    "node": "20.x"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
