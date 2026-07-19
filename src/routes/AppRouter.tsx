@@ -1,5 +1,5 @@
 import { lazy, Suspense } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
 import DashboardPage from "../pages/Dashboard/DashboardPage";
 import NotFoundPage from "../pages/NotFound/NotFoundPage";
@@ -23,7 +23,7 @@ function LoadingFallback() {
 
 export default function AppRouter() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Suspense fallback={<LoadingFallback />}>
         <Routes>
           <Route path="/" element={<DashboardPage />} />
@@ -38,6 +38,6 @@ export default function AppRouter() {
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
